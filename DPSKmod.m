@@ -1,11 +1,4 @@
-function [DPSK,Nsps,Fs] = DPSKmod(Rb,T,Fc,bk)
-    Nb=T*Rb;
-    Fs=20*Fc;
-    Ts=1/Fs;
-    Nsps=Fs/Rb;
-    FS=Fs+Nsps;
-    TS=1/FS;
-    t=0:TS:T-TS;
+function DPSK = DPSKmod(Nb,Fc,bk,Nsps,t)
     ref=1;
     for i=1:Nb
         ref=not(xor(ref,bk(i)));

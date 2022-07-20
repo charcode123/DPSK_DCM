@@ -2,7 +2,7 @@ clc
 close all
 clear all
 T=1;
-Rb=4;
+Rb=8;
 Nb=T*Rb;
 Fc=20;
 Fs=20*Fc;
@@ -11,7 +11,8 @@ Nsps=Fs/Rb;
 FS=Fs+Nsps;
 TS=1/FS;
 t=0:TS:T-TS;
-bk=randi([0 1],1,Nb);
+%bk=randi([0 1],1,Nb);
+bk=[1,0,1,1,0,1,1,0];
 ref=1;
 for i=1:Nb
     ref=not(xor(ref,bk(i)));
